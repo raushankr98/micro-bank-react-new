@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Navbar from '../navbar/Navbar'
 import style from "./Dashboard.module.css"
 import Summary from './Summary'
-import axios from 'axios'
 import Card from './Card'
 import PopupCart from './PopupCart'
+import {axiosInstance} from '../../network'
 
 type Current = {
     mIcon: string,
@@ -26,7 +26,7 @@ function Dashboard() {
 
     const getData = async () => {
         const id = localStorage.getItem("profileId")
-        const { data }: any = await axios.get(`http://localhost:4000/registerAccount?id=${id}`);
+        const { data }: any = await axiosInstance.get(`/registerAccount?id=${id}`);
         setCurrentData(data[0].currentServices)
         setAvailableData(data[0].availableServices)
     }
@@ -44,7 +44,7 @@ function Dashboard() {
         const rating = Number(ratingRef.current?.value)
         if (rating > 0 && rating < 6) {
             const id = localStorage.getItem("profileId")
-            const { data }: any = await axios.get(`http://localhost:4000/registerAccount?id=${id}`);
+            const { data }: any = await axiosInstance.get(`/registerAccount?id=${id}`);
             data[0].currentServices.forEach((element: any) => {
                 if (element.header === header) {
                     element.rating = rating
@@ -55,7 +55,7 @@ function Dashboard() {
                     element.rating = rating
                 }
             });
-            await axios.patch(`http://localhost:4000/registerAccount/${id}`, data[0]);
+            await axiosInstance.patch(`/registerAccount/${id}`, data[0]);
             alert("Rating Updated")
             getData()
             divRef.current!.style.display = "none"
@@ -67,7 +67,7 @@ function Dashboard() {
     const handleMove = async () => {
         let flag = true
         const id = localStorage.getItem("profileId")
-        const { data }: any = await axios.get(`http://localhost:4000/registerAccount?id=${id}`);
+        const { data }: any = await axiosInstance.get(`/registerAccount?id=${id}`);
         // move to Available services
         data[0].currentServices.forEach((element: any) => {
             if (element.header === header) {
@@ -98,7 +98,7 @@ function Dashboard() {
             data[0].availableServices = filter2
         }
 
-        await axios.patch(`http://localhost:4000/registerAccount/${id}`, data[0]);
+        await axiosInstance.patch(`/registerAccount/${id}`, data[0]);
         alert("Move To Current/Available Services Completed")
         getData()
         divRef.current!.style.display = "none"

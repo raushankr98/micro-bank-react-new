@@ -9,12 +9,6 @@
       "cpassword": "Uday1234",
       "currentServices": [
         {
-          "mIcon": "file/payroll.svg",
-          "dIcon": "file/payments2.png",
-          "rating": 4,
-          "header": "Payroll"
-        },
-        {
           "mIcon": "file/payment.svg",
           "dIcon": "file/payroll2.png",
           "rating": 4,
@@ -25,6 +19,12 @@
           "dIcon": "file/loan2.png",
           "rating": 4,
           "header": "Loan"
+        },
+        {
+          "mIcon": "file/wallet.svg",
+          "dIcon": "file/wallet2.png",
+          "rating": 1,
+          "header": "Wallet"
         }
       ],
       "availableServices": [
@@ -47,10 +47,10 @@
           "header": "Investments"
         },
         {
-          "mIcon": "file/wallet.svg",
-          "dIcon": "file/wallet2.png",
-          "rating": 1,
-          "header": "Wallet"
+          "mIcon": "file/payroll.svg",
+          "dIcon": "file/payments2.png",
+          "rating": 4,
+          "header": "Payroll"
         }
       ]
     },

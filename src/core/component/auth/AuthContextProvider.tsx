@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { axiosInstance } from '../../network';
 
 const AuthContext = createContext<{
     isAuth: boolean;
@@ -19,7 +19,7 @@ const AuthContextProvider: React.FC = (props) => {
     const handleAuth = async (email: string, password: string) => {
         if (email.trim().length > 0 && password.trim().length > 0) {
             try {
-                const { data } = await axios.get(`http://localhost:4000/registerAccount?email=${email}`)
+                const { data } = await axiosInstance.get(`registerAccount?email=${email}`)
                 const pass: any = data[0]
                 if (pass.password === password) {
                     alert("Login Successful")
