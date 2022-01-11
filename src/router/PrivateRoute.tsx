@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Redirect, Route } from 'react-router-dom';
-import { AuthContext } from '../component/auth/AuthContextProvider'
+import { AuthContext } from '../core/component/auth/AuthContextProvider'
 type IsPrivateRoute = {
     children: any;
     path: string;

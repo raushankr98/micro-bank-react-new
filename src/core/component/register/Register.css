@@ -9,7 +9,7 @@
     width: 50%;
     height: 912px;
     /* background: #FE2D17; */
-    background-image: url('../../assets/file/registerAccount.jpg');
+    background-image: url('../../../assets/file/registerAccount.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
