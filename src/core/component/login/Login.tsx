@@ -1,7 +1,7 @@
 import React, { FormEvent, useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import style from './Login.module.css'
-import { AuthContext } from '../auth/AuthContextProvider'
+import { AuthContext } from '../../../features/auth/AuthContextProvider'
 
 function Login() {
     const [email, setEmail] = useState<string>("")

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import style from "./Navbar.module.css"
-import { AuthContext } from '../auth/AuthContextProvider'
+import { AuthContext } from '../../../features/auth/AuthContextProvider'
 
 function Navbar() {
 

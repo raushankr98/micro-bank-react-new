@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Navbar from '../navbar/Navbar'
+import Navbar from '../../core/component/navbar/Navbar'
 import style from "./Dashboard.module.css"
 import Summary from './Summary'
 import Card from './Card'
 import PopupCart from './PopupCart'
-import {axiosInstance} from '../../network'
+import {axiosInstance} from '../../core/network'
 
 type Current = {
     mIcon: string,

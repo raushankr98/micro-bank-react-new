@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react'
 import { useHistory } from 'react-router-dom';
-import { axiosInstance } from '../../network';
+import { axiosInstance } from '../../core/network';
 
 const AuthContext = createContext<{
     isAuth: boolean;
