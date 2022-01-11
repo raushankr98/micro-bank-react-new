@@ -1,0 +1,378 @@
+.main_container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    margin-top: 72px;
+    padding-bottom: 38px;
+    background: #F2F2F2;
+}
+
+.dashboard {
+    padding: 26px 24px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+    color: #1A1A1A;
+}
+
+.dashboard_container {
+    width: 100%;
+    height: auto;
+}
+
+.dashboard_div {
+    height: 60px;
+    margin: 0px 24px 0px 24px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+.dashboard_btn {
+    padding: 18px 24px;
+    font-size: 16px;
+    /* border-radius: 12px; */
+    border: none;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #F2F2F2;
+}
+
+#summary_btn {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border: none;
+}
+
+.dashboard_btn:hover, #summary_btn:hover {
+    border-top: 3px solid #D90429;
+    padding: 16px 24px;
+}
+.accountHeader{
+    color: rgba(0, 0, 0, 0.38);
+    font-size: 12px;
+}
+.accountNum{
+    color: #333333;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Summary div  */
+
+.dashboard_summary_div {
+    height: auto;
+    min-height: 145px;
+    margin: 10px 24px 0px 24px;
+    background: #FFF0F3;
+    border: 1px solid rgba(217, 4, 41, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+.dashboard_summary {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    color: #1A1A1A;
+    margin: 24px;
+}
+
+.inner_item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-left: 20px;
+    height: auto;
+    min-height: 100px;
+}
+
+.dashboard_item {
+    width: 100px;
+    height: 50px;
+    margin: 0px 100px 0px 24px;
+}
+
+.account_no {
+    display: none;
+}
+
+/* micro banck services heading  */
+
+#services_heading {
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    /* display: flex;
+    align-items: flex-end; */
+    color: #1A1A1A;
+    margin: 24px auto 8px 24px;
+}
+
+#services_heading_inner {
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    /* display: flex;
+    align-items: flex-end; */
+    color: #1A1A1A;
+    margin-left: 8px;
+}
+
+#br {
+    display: none;
+}
+
+.dashboard_current_service_div {
+    height: auto;
+    min-height: 192px;
+    margin: 10px 24px 0px 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+}
+
+.dashboard_summary {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    color: #1A1A1A;
+    margin: 24px;
+}
+
+.inner_item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    margin-left: 20px;
+    height: auto;
+    min-height: 100px;
+}
+
+/* making responsive  */
+
+@media (max-width:778px) {
+    .main_container {
+        margin-top: 64px;
+        background-color: #FFFFFF;
+    }
+    #dashboard {
+        display: none;
+    }
+    .dashboard_div {
+        margin: 0;
+        border-radius: 0px;
+    }
+    .dashboard_btn {
+        padding: 17px 24px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        /* identical to box height */
+        text-align: right;
+        color: #8D99AE;
+        border: none;
+    }
+    .dashboard_btn:hover, #summary_btn:hover {
+        border-top: none;
+    }
+    .dashboard_btn:hover, #summary_btn:hover {
+        border-bottom: 2px solid #D90429;
+        padding: 17px 24px;
+        color: #D90429;
+    }
+    #summary_btn {
+        margin: 0;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 25px;
+        /* identical to box height */
+        color: #EF233C;
+    }
+    /* Summary div */
+    .dashboard_summary_div {
+        border: 1px solid #8D99AE;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin: 10px 10px 0px 10px;
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #8D99AE;
+    }
+    #summary_head {
+        display: none;
+    }
+    #inner_item {
+        flex-direction: column;
+        margin: 0;
+    }
+    .dashboard_item {
+        margin: 5px 60px 5px 24px;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        display: none;
+    }
+    .account_no {
+        position: absolute;
+        width: 70%;
+        height: 19px;
+        left: 29px;
+        top: 21px;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #2B2D42;
+        display: block;
+        display: flex;
+    }
+    #income {
+        margin-top: 40px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 25px;
+        /* identical to box height */
+        color: #2B2D42;
+        display: flex;
+        align-items: center;
+    }
+    #income_div {
+        margin-left: 31px;
+        width: 210px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #FFFFFF;
+        background: #2B2D42;
+    }
+    #spends {
+        margin-top: 40px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 25px;
+        /* identical to box height */
+        color: #2B2D42;
+        display: flex;
+        align-items: center;
+        margin-top: 80px;
+    }
+    #spends_div {
+        margin-left: 31px;
+        width: 124px;
+        background: #EF233C;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #FFFFFF;
+    }
+    /* micro bank services heading */
+    #services_heading {
+        margin: 0;
+        padding: 5px 10px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 25px;
+        padding-top: 14px;
+        /* identical to box height */
+        color: #000000;
+    }
+    #services_heading_inner {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #000000;
+        margin-left: 0;
+        font-family: Open Sans;
+        font-style: normal;
+    }
+    #br {
+        display: block;
+    }
+    #current_services {
+        background-color: #2B2D42;
+    }
+    #current_services_outer {
+        height: auto;
+        min-height: 100px;
+        padding: 10px 10px 17px 10px;
+        background-color: #2B2D42;
+        border: none;
+        margin: 0px;
+    }
+    #current_head {
+        margin: 0px 0px 10px 0px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #FFFFFF;
+    }
+    #current_services_inner {
+        border: 1px solid #8D99AE;
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        border-bottom: 1px solid #8D99AE;
+        padding: 0;
+        margin: 0;
+    }
+    #inner_item {
+        flex-direction: column;
+        margin: 0;
+    }
+    #available_services_outer {
+        height: auto;
+        min-height: 100px;
+        padding: 10px 10px 17px 10px;
+        border: none;
+        margin: 0px;
+        border-radius: 0;
+    }
+    #available_head {
+        margin: 0px 0px 10px 0px;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+        /* identical to box height */
+        color: #000000;
+    }
+    #available_services_inner {
+        border: 1px solid #8D99AE;
+        box-sizing: border-box;
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        min-height: 98px;
+    }
+}
