@@ -1,5 +1,5 @@
 import React from 'react'
-import Dashboard from '../features/dashboard/Dashboard'
+import Dashboard from '../features/dashboard/container/dashboard/Dashboard'
 import { Route, Switch } from 'react-router-dom'
 import Login from '../core/component/login/Login'
 import Register from '../core/component/register/Register'

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import style from "./Card.module.css"
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 type item = {
@@ -6,21 +6,13 @@ type item = {
     dIcon: string,
     rating: number,
     header: string,
-    hanldeRef: (header: string) => void
+    hanldeRef: (header: string) => void,
+    showRating?: boolean
 }
 
 function Card(props: item) {
-    const hideRef = useRef<HTMLDivElement>(null)
-
-    const handleRating = () => {
-        hideRef.current!.style.display = "block"
-    }
-    const handleRatingHide = () => {
-        hideRef.current!.style.display = "none"
-    }
-
     return (
-        <div onClick={() => (props.hanldeRef(props.header))} onMouseOver={handleRating} onMouseLeave={handleRatingHide} className={style.dashboard_current_item} draggable="true">
+        <div onClick={() => (props.hanldeRef(props.header))} className={style.dashboard_current_item} draggable="true">
             {/* <!-- desktop icon --> */}
             <img className={style.desktop_icon} src={props.dIcon} alt="Logo" />
             {/* <!-- mobile icon --> */}
@@ -28,7 +20,7 @@ function Card(props: item) {
             {/* <!-- heading --> */}
             <h3 className={style.title}>{props.header}</h3>
             {/* <!-- rating --> */}
-            <div ref={hideRef} id={style.rating}>
+            <div style={props.showRating ? { display: "block" } : {}} id={style.rating}>
                 {[1, 2, 3, 4, 5].map((el: number) => {
                     if (el <= props.rating) {
                         return (<AiFillStar className={style.star} key={el} />)

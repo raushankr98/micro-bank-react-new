@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Navbar from '../../core/component/navbar/Navbar'
+import Navbar from '../../../../core/component/navbar/Navbar'
 import style from "./Dashboard.module.css"
-import Summary from './Summary'
-import Card from './Card'
-import PopupCart from './PopupCart'
-import {axiosInstance} from '../../core/network'
+import Summary from '../summary/Summary'
+import Card from '../../components/card/Card'
+import PopupCart from '../../components/popupCard/PopupCart'
+import {axiosInstance} from '../../../../core/network'
 
 type Current = {
     mIcon: string,
@@ -131,7 +131,7 @@ function Dashboard() {
                     <div id={style.current_services_outer} className={style.dashboard_current_service_div}>
                         <h2 id={style.current_head} className={style.dashboard_summary}>Current Services</h2>
                         <div id={style.current_services_inner} className={style.inner_item}>
-                            {currentData ? currentData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} />)) : null}
+                            {currentData ? currentData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} showRating={true} />)) : null}
                         </div>
                     </div>
                 </div>
