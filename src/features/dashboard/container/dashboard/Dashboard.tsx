@@ -4,7 +4,10 @@ import style from "./Dashboard.module.css"
 import Summary from '../summary/Summary'
 import Card from '../../components/card/Card'
 import PopupCart from '../../components/popupCard/PopupCart'
-import {axiosInstance} from '../../../../core/network'
+import { axiosInstance } from '../../../../core/network'
+import { useHistory } from 'react-router-dom';
+import { useAppSelector } from '../../../../store/store'
+
 
 type Current = {
     mIcon: string,
@@ -19,10 +22,18 @@ function Dashboard() {
     const [header, setHeader] = useState<string>('');
     const divRef = useRef<HTMLDivElement>(null);
     const ratingRef = useRef<HTMLInputElement>(null);
+    const history = useHistory();
+    const isAuth = useAppSelector(state => state.auth.isAuth);
+    const err = useAppSelector(state => state.auth.err);
+
 
     useEffect(() => {
-        getData()
-    }, [])
+        if (isAuth) {
+            getData()
+        } else {
+            history.push("/")
+        }
+    }, [history])
 
     const getData = async () => {
         const id = localStorage.getItem("profileId")

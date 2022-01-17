@@ -65,7 +65,7 @@
         {
           "mIcon": "file/bank.svg",
           "dIcon": "file/bank2.png",
-          "rating": 2,
+          "rating": 4,
           "header": "Current Account"
         },
         {
@@ -77,7 +77,7 @@
         {
           "mIcon": "file/payment.svg",
           "dIcon": "file/payroll2.png",
-          "rating": 0,
+          "rating": 3,
           "header": "Payments"
         },
         {

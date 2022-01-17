@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Redirect, Route } from 'react-router-dom';
-import { AuthContext } from '../features/auth/AuthContextProvider'
 type IsPrivateRoute = {
     children: any;
     path: string;
@@ -9,8 +8,7 @@ type IsPrivateRoute = {
     push?: boolean;
 }
 function PrivateRoute({ children, ...rest }: IsPrivateRoute) {
-    const { isAuth } = useContext(AuthContext)
-    return (<Route {...rest} render={() => (isAuth ? (children) : <Redirect to="/" />)} />)
+    return (<Route {...rest} render={() => (localStorage.getItem('profileId') ? (children) : <Redirect to="/" />)} />)
 }
 
 export default PrivateRoute

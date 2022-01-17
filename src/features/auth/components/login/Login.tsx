@@ -1,16 +1,34 @@
-import React, { FormEvent, useContext, useState } from 'react'
+import React, { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { loginUser } from '../../store/actions'
 import style from './Login.module.css'
-import { AuthContext } from '../../../features/auth/AuthContextProvider'
+import { useHistory } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../../../store/store';
+import { loadData } from '../../store/api';
+// import { AuthContext } from '../../AuthContextProvider'
 
 function Login() {
     const [email, setEmail] = useState<string>("")
     const [password, setPassword] = useState<string>("")
-    const { handleAuth } = useContext(AuthContext)
+    const history = useHistory();
+    const dispatch = useAppDispatch()
 
-    const handleLogin = (e: FormEvent) => {
+    const isAuth = useAppSelector(state => state.auth.isAuth);
+    const err = useAppSelector(state => state.auth.err);
+    console.log(isAuth)
+
+    const handleLogin = async (e: FormEvent) => {
         e.preventDefault()
-        handleAuth(email, password)
+        const req = await loginUser({ email, password, dispatch });
+        if (req) {
+            history.push("/dashboard");
+        }
+    }
+
+    if (isAuth) {
+        history.push("/dashboard")
+    } else {
+        history.push("/")
     }
 
     return (
