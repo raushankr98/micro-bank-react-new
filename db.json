@@ -17,14 +17,20 @@
         {
           "mIcon": "file/money-bag.svg",
           "dIcon": "file/loan2.png",
-          "rating": 4,
+          "rating": 1,
           "header": "Loan"
         },
         {
-          "mIcon": "file/wallet.svg",
-          "dIcon": "file/wallet2.png",
-          "rating": 1,
-          "header": "Wallet"
+          "mIcon": "file/time.svg",
+          "dIcon": "file/investment2.png",
+          "rating": 3,
+          "header": "Investments"
+        },
+        {
+          "mIcon": "file/bank.svg",
+          "dIcon": "file/bank2.png",
+          "rating": 4,
+          "header": "Current Account"
         }
       ],
       "availableServices": [
@@ -35,22 +41,16 @@
           "header": "Tax Payment"
         },
         {
-          "mIcon": "file/time.svg",
-          "dIcon": "file/investment2.png",
-          "rating": 3,
-          "header": "Investments"
-        },
-        {
           "mIcon": "file/payroll.svg",
           "dIcon": "file/payments2.png",
           "rating": 4,
           "header": "Payroll"
         },
         {
-          "mIcon": "file/bank.svg",
-          "dIcon": "file/bank2.png",
-          "rating": 4,
-          "header": "Current Account"
+          "mIcon": "file/wallet.svg",
+          "dIcon": "file/wallet2.png",
+          "rating": 1,
+          "header": "Wallet"
         }
       ]
     },

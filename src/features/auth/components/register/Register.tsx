@@ -2,7 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Register.css'
 import { v4 as uuid } from 'uuid'
-import axios from 'axios'
+import { axiosInstance } from '../../../../core/network'
 
 type FormDetails = {
     id: string
@@ -80,7 +80,7 @@ function Register() {
                     header: "Loan"
                 }]
             }
-            axios.post('http://localhost:4000/registerAccount', form)
+            axiosInstance.post('/registerAccount', form)
         } else {
             alert("Something went wrong!!")
         }

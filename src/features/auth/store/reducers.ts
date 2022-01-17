@@ -1,7 +1,7 @@
 import { loadData, saveData } from './api';
 import { LOGIN_USER_FAILURE, LOGIN_USER_REQUEST, LOGIN_USER_SUCCESS, LOGOUT_USER } from './actions';
 
-const isAuth = loadData("isAuth") && loadData("profileId") || false;
+const isAuth = loadData("isAuth") || false ;
 
 interface IState {
     isLoading: boolean;
@@ -13,7 +13,7 @@ interface IState {
 const initState: IState = {
     isLoading: false,
     isError: false,
-    isAuth: isAuth,
+    isAuth:  isAuth,
     err: ''
 }
 
@@ -26,7 +26,7 @@ const authReducer = (state: IState | any= initState, action: any) => {
                 ...state,
                 isLoading: true,
                 isError: false,
-                isAuth: isAuth,
+                isAuth: false,
                 err: ''
             }
         }

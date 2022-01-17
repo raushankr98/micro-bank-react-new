@@ -91,4 +91,5 @@ export const loginUser = async (data: ISignIn) => {
 export const handleLogout = () => {
     alert("Logout Successful")
     localStorage.removeItem("profileId")
+    localStorage.removeItem("isAuth")
 }

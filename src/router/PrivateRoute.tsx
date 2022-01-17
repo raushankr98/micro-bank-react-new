@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom';
+import { useAppSelector } from '../store/store';
 type IsPrivateRoute = {
     children: any;
     path: string;
@@ -8,7 +9,8 @@ type IsPrivateRoute = {
     push?: boolean;
 }
 function PrivateRoute({ children, ...rest }: IsPrivateRoute) {
-    return (<Route {...rest} render={() => (localStorage.getItem('profileId') ? (children) : <Redirect to="/" />)} />)
+    const isAuth = useAppSelector(state => state.auth.isAuth);
+    return (<Route {...rest} render={() => (isAuth ? (children) : <Redirect to="/" />)} />)
 }
 
 export default PrivateRoute

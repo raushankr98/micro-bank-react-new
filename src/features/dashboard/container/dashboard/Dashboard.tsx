@@ -7,6 +7,7 @@ import PopupCart from '../../components/popupCard/PopupCart'
 import { axiosInstance } from '../../../../core/network'
 import { useHistory } from 'react-router-dom';
 import { useAppSelector } from '../../../../store/store'
+import Details from '../details'
 
 
 type Current = {
@@ -20,6 +21,7 @@ function Dashboard() {
     const [currentData, setCurrentData] = useState<Current[]>();
     const [availableData, setAvailableData] = useState<Current[]>();
     const [header, setHeader] = useState<string>('');
+    const [show, setShow] = useState<boolean>(true);
     const divRef = useRef<HTMLDivElement>(null);
     const ratingRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
@@ -125,37 +127,42 @@ function Dashboard() {
                 {/* summary and details button */}
                 <div className={style.dashboard_container}>
                     <div className={style.dashboard_div}>
-                        <button id={style.summary_btn} className={style.dashboard_btn}>Summary</button>
-                        <button className={style.dashboard_btn}>Details</button>
+                        <button id={style.summary_btn} onClick={() => setShow(true)} style={show ? { borderTop: '3px solid #D90429', padding: "16px 24px" } : {}} className={style.dashboard_btn}>Summary</button>
+                        <button onClick={() => setShow(false)} style={show ? {} : { borderTop: '3px solid #D90429', padding: "16px 24px" }} className={style.dashboard_btn}>Details</button>
                     </div>
                 </div>
-                {/* summary of account like account no and account balance */}
-                <Summary />
-                {/* micro bank summary heading  */}
-                <h2 id={style.services_heading}>Services <br id={style.br} />
-                    <span id={style.services_heading_inner}>Micro bank services
-                        for you</span>
-                </h2>
+                {show ? <>
+                    {/* summary of account like account no and account balance */}
+                    <Summary />
+                    {/* micro bank summary heading  */}
+                    <h2 id={style.services_heading}>Services <br id={style.br} />
+                        <span id={style.services_heading_inner}>Micro bank services
+                            for you</span>
+                    </h2>
 
-                {/* current services */}
-                <div id={style.current_services} className={style.dashboard_container}>
-                    <div id={style.current_services_outer} className={style.dashboard_current_service_div}>
-                        <h2 id={style.current_head} className={style.dashboard_summary}>Current Services</h2>
-                        <div id={style.current_services_inner} className={style.inner_item}>
-                            {currentData ? currentData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} showRating={true} />)) : null}
+                    {/* current services */}
+                    <div id={style.current_services} className={style.dashboard_container}>
+                        <div id={style.current_services_outer} className={style.dashboard_current_service_div}>
+                            <h2 id={style.current_head} className={style.dashboard_summary}>Current Services</h2>
+                            <div id={style.current_services_inner} className={style.inner_item}>
+                                {currentData ? currentData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} showRating={true} />)) : null}
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                {/* available services */}
-                <div id={style.available_services} className={style.dashboard_container}>
-                    <div id={style.available_services_outer} className={style.dashboard_current_service_div}>
-                        <h2 id={style.available_head} className={style.dashboard_summary}>Available Services</h2>
-                        <div id={style.available_services_inner} className={style.inner_item}>
-                            {availableData ? availableData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} />)) : null}
+                    {/* available services */}
+                    <div id={style.available_services} className={style.dashboard_container}>
+                        <div id={style.available_services_outer} className={style.dashboard_current_service_div}>
+                            <h2 id={style.available_head} className={style.dashboard_summary}>Available Services</h2>
+                            <div id={style.available_services_inner} className={style.inner_item}>
+                                {availableData ? availableData.map(({ mIcon, dIcon, header, rating }) => (<Card key={header} mIcon={mIcon} dIcon={dIcon} rating={rating} header={header} hanldeRef={hanldeRef} />)) : null}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </> :
+                    <Details />
+                }
+
             </div>
         </>
     )
