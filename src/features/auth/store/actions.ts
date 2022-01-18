@@ -1,4 +1,4 @@
-import { handleLogin } from './api'
+import { handleLogin, saveData } from './api'
 
 export const REGISTER_USER_REQUEST = "REGISTER_USER_REQUEST";
 export const REGISTER_USER_SUCCESS = "REGISTER_USER_SUCCESS";
@@ -68,19 +68,21 @@ export const registerUser = () => (dispatch: any) => {
 
 export const loginUser = async (data: ISignIn) => {
     const { email, password, dispatch } = data;
-    try {
-        dispatch(loginUserRequest())
-        const { data } = await handleLogin(email)
-        const pass: any = data[0]
-        if (pass.password === password) {
-            alert("Login Successful")
-            localStorage.setItem("profileId", pass.id)
-            dispatch(loginUserSuccess("true"))
-            return true
-        } else {
-            alert("Something went wrong")
-        }
+    dispatch(loginUserRequest())
 
+    try {
+        setTimeout(async () => {
+            const { data } = await handleLogin(email)
+            const pass: any = data[0]
+            if (pass.password === password) {
+                localStorage.setItem("profileId", pass.id);
+                saveData("name", pass.fullName);
+                saveData("email", pass.email);
+                dispatch(loginUserSuccess("true"));
+            } else {
+                alert("Something went wrong")
+            }
+        }, 500);
     } catch (e) {
         alert("Something went wrong")
         dispatch(loginUseFailure(e))
@@ -88,8 +90,10 @@ export const loginUser = async (data: ISignIn) => {
     }
 }
 
-export const handleLogout = () => {
-    alert("Logout Successful")
+export const handleLogout = (dispatch: any) => {
     localStorage.removeItem("profileId")
     localStorage.removeItem("isAuth")
+    localStorage.removeItem("name")
+    localStorage.removeItem("email")
+    dispatch(logoutUser())
 }

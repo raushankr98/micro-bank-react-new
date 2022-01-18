@@ -1,5 +1,5 @@
 .main_container {
-    position: relative;
+    /* position: relative; */
     width: 100%;
     height: auto;
     min-height: 100vh;
@@ -9,7 +9,9 @@
 }
 
 .dashboard {
-    padding: 26px 24px;
+    padding-top: 32px;
+    padding-left: 24px;
+    padding-bottom: 24px;
     font-family: Open Sans;
     font-style: normal;
     font-weight: bold;
@@ -92,7 +94,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    /* position: relative; */
     margin-left: 20px;
     height: auto;
     min-height: 100px;
@@ -165,7 +167,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    /* position: relative; */
     margin-left: 20px;
     height: auto;
     min-height: 100px;
@@ -227,6 +229,7 @@
     }
     #inner_item {
         flex-direction: column;
+        position: relative;
         margin: 0;
     }
     .dashboard_item {

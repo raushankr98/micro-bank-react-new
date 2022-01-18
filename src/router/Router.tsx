@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 import Login from '../features/auth/components/login/Login'
 import Register from '../features/auth/components/register/Register'
 import PrivateRoute from './PrivateRoute'
+import EditProfile from '../features/profile/container/editProfile'
 
 function Router() {
     return (
@@ -18,10 +19,14 @@ function Router() {
                 <Route exact path="/register">
                     <Register />
                 </Route>
-                
+
                 {/* Dashboard page Route */}
                 <PrivateRoute exact path="/dashboard">
                     <Dashboard />
+                </PrivateRoute>
+
+                <PrivateRoute exact path="/editProfile">
+                    <EditProfile />
                 </PrivateRoute>
 
                 {/* Page not found */}

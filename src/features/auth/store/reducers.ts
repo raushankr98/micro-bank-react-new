@@ -59,7 +59,7 @@ const authReducer = (state: IState | any= initState, action: any) => {
                 isError: false,
                 isLoading: false,
                 isAuth: false,
-                err: payload
+                err: ""
             }
         }
 

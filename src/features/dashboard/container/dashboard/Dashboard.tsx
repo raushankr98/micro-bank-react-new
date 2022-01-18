@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Navbar from '../../../../core/component/navbar/Navbar'
 import style from "./Dashboard.module.css"
 import Summary from '../summary/Summary'
 import Card from '../../components/card/Card'
@@ -26,7 +25,6 @@ function Dashboard() {
     const ratingRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
     const isAuth = useAppSelector(state => state.auth.isAuth);
-    const err = useAppSelector(state => state.auth.err);
 
 
     useEffect(() => {
@@ -35,7 +33,7 @@ function Dashboard() {
         } else {
             history.push("/")
         }
-    }, [history])
+    }, [history, isAuth])
 
     const getData = async () => {
         const id = localStorage.getItem("profileId")
@@ -119,7 +117,6 @@ function Dashboard() {
 
     return (
         <>
-            <Navbar />
             <PopupCart divRef={divRef} hidePopup={hidePopup} handleRating={handleRating} ratingRef={ratingRef} handleMove={handleMove} />
             <div className={style.main_container}>
                 {/* dashboard heading */}
@@ -162,7 +159,6 @@ function Dashboard() {
                 </> :
                     <Details />
                 }
-
             </div>
         </>
     )
