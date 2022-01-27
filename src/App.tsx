@@ -1,19 +1,27 @@
 import React from 'react';
-import Alert from './core/component/alert';
+import { connect } from 'react-redux';
+import Loader from './core/component/loader';
 import Navbar from './core/component/navbar/Navbar';
 import Router from './router/Router';
-import { useAppSelector } from './store/store';
 
-function App() {
-  const isAuth = useAppSelector(state => state.auth.isAuth);
+function App(props: any) {
 
   return (
     <div>
       {/* <Alert/> */}
-      {isAuth && <Navbar />}
+      {props.isLoading && < Loader />}
+      {props.isAuth && <Navbar />}
       <Router />
     </div>
   );
+
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    isAuth: state.auth.isAuth,
+    isLoading: state.auth.isLoading
+  }
+}
+
+export default connect(mapStateToProps)(App);

@@ -27,3 +27,43 @@
     border-radius: 12px;
     padding: 24px;
 }
+
+.image_div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    width: 200px;
+    height: 235px;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.showimage {
+    Width: 180px;
+    Height: 180px;
+    background: #F2F2F2;
+    border: 1px dashed #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+}
+
+.btn_image {
+    width: 180px;
+    height: 25px;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #D90429;
+    cursor: pointer;
+}

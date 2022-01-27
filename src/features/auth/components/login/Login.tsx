@@ -12,11 +12,10 @@ function Login() {
     const dispatch = useAppDispatch()
 
     const isAuth = useAppSelector(state => state.auth.isAuth);
-    const isLoading = useAppSelector(state => state.auth.isAuth);
 
     const handleLogin = async (e: FormEvent) => {
         e.preventDefault()
-        const req = await loginUser({ email, password, dispatch });
+        await loginUser({ email, password, dispatch });
         if (isAuth) {
             history.push("/dashboard");
         }

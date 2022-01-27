@@ -1,18 +1,18 @@
 import React from 'react'
-import { Oval } from 'react-loader-spinner';
-import { useAppSelector } from '../../../store/store';
+import { Rings } from 'react-loader-spinner';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import style from './Loader.module.css'
 
 function Loader() {
-    const isLoading = useAppSelector(state => state.auth.isAuth);
     return (
-        <div>
-            <Oval
-                height={100}
-                width={100}
+        <div className={style.loader}>
+            <Rings
+                height={115}
+                width={115}
                 color='grey'
                 arialLabel='loading'
             />
+            <h2 className={style.h2}>Loading....</h2>
         </div>
     )
 }
