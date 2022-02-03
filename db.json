@@ -21,16 +21,16 @@
           "header": "Investments"
         },
         {
-          "mIcon": "file/bank.svg",
-          "dIcon": "file/bank2.png",
-          "rating": 4,
-          "header": "Current Account"
-        },
-        {
           "mIcon": "file/tax.svg",
           "dIcon": "file/tax2.png",
           "rating": 4,
           "header": "Tax Payment"
+        },
+        {
+          "mIcon": "file/money-bag.svg",
+          "dIcon": "file/loan2.png",
+          "rating": 1,
+          "header": "Loan"
         }
       ],
       "availableServices": [
@@ -47,10 +47,10 @@
           "header": "Wallet"
         },
         {
-          "mIcon": "file/money-bag.svg",
-          "dIcon": "file/loan2.png",
-          "rating": 1,
-          "header": "Loan"
+          "mIcon": "file/bank.svg",
+          "dIcon": "file/bank2.png",
+          "rating": 4,
+          "header": "Current Account"
         }
       ]
     },
@@ -69,31 +69,19 @@
           "header": "Current Account"
         },
         {
-          "mIcon": "file/money-bag.svg",
-          "dIcon": "file/loan2.png",
-          "rating": 2,
-          "header": "Loan"
-        },
-        {
           "mIcon": "file/payment.svg",
           "dIcon": "file/payroll2.png",
-          "rating": 3,
+          "rating": 5,
           "header": "Payments"
         },
-        {
-          "mIcon": "file/time.svg",
-          "dIcon": "file/investment2.png",
-          "rating": 0,
-          "header": "Investments"
-        }
-      ],
-      "availableServices": [
         {
           "mIcon": "file/payroll.svg",
           "dIcon": "file/payments2.png",
           "rating": 4,
           "header": "Payroll"
-        },
+        }
+      ],
+      "availableServices": [
         {
           "mIcon": "file/tax.svg",
           "dIcon": "file/tax2.png",
@@ -105,6 +93,18 @@
           "dIcon": "file/wallet2.png",
           "rating": 0,
           "header": "Wallet"
+        },
+        {
+          "mIcon": "file/time.svg",
+          "dIcon": "file/investment2.png",
+          "rating": 3,
+          "header": "Investments"
+        },
+        {
+          "mIcon": "file/money-bag.svg",
+          "dIcon": "file/loan2.png",
+          "rating": 2,
+          "header": "Loan"
         }
       ]
     }

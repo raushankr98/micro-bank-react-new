@@ -1,210 +1,211 @@
 .container {
-    position: fixed;
-    width: 100%;
-    height: 72px;
-    left: 0px;
-    top: 0px;
-    /* palette / background / paper */
-    background: #FFFFFF;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  position: fixed;
+  width: 100%;
+  height: 72px;
+  left: 0px;
+  top: 0px;
+  /* palette / background / paper */
+  background: #ffffff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.12);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
 }
 
 .menu {
-    position: relative;
-    display: none;
-    cursor: pointer;
+  display: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
-
-.line_1 {
-    position: absolute;
-    width: 32px;
-    height: 2px;
-    left: 10px;
-    top: 22px;
-    background: #FFFFFF;
+.Logo_div {
+  margin-left: -40px;
 }
-
-.line_2 {
-    position: absolute;
-    width: 32px;
-    height: 2px;
-    left: 10px;
-    top: 31px;
-    background: #FFFFFF;
-}
-
-.line_3 {
-    position: absolute;
-    width: 32px;
-    height: 2px;
-    left: 10px;
-    top: 40px;
-    background: #FFFFFF;
-}
-
 .nav {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-weight: 900;
-    font-family: Orbitron;
-    font-style: normal;
+  font-weight: 900;
+  font-family: Orbitron;
+  font-style: normal;
 }
 
 .logo_name {
-    font-size: 24px;
-    line-height: 30px;
-    /* identical to box height */
-    color: #D90429;
-    font-weight: 900;
-    font-family: Orbitron;
-    font-style: normal;
+  font-size: 24px;
+  line-height: 30px;
+  /* identical to box height */
+  color: #d90429;
+  font-weight: 900;
+  font-family: Orbitron;
+  font-style: normal;
 }
 
 .nav_control {
-    /* width: 8%; */
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .logo_pic {
-    width: 37px;
-    height: 37px;
-    margin-left: 15px;
-    background: #D90429;
-    border-radius: 100px;
-    display: grid;
-    place-items: center;
+  width: 37px;
+  height: 37px;
+  margin-left: 15px;
+  background: #d90429;
+  border-radius: 100px;
+  display: grid;
+  place-items: center;
 }
 
 .logout_btn {
-    font-size: 18px;
-    color: #FFFFFF;
-    font-weight: 400;
-    display: none;
-    cursor: pointer;
+  font-size: 18px;
+  color: #ffffff;
+  font-weight: 400;
+  display: none;
+  cursor: pointer;
 }
-
-@media (max-width:778px) {
-    .container {
-        position: absolute;
-        width: 100%;
-        height: 64px;
-        left: 0px;
-        top: 0px;
-        background: #D90429;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    }
-
-    .menu {
-        display: block;
-    }
-
-    .logo_name, .logo {
-        font-family: Open Sans;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 33px;
-        /* identical to box height */
-        color: #FFFFFF;
-    }
-
-    .nav_control {
-        display: none;
-    }
-
-    .logout_btn {
-        display: block;
-    }
-
-    .nav {
-        padding: 15px;
-        margin-left: 52px;
-    }
-}
-
 
 .popupcard {
-    position: fixed;
-    top: 72px;
-    right: 24px;
-    width: 321px;
-    height: 368px;
-    background: #FFFFFF;
-    border: 1px solid #E0E0E0;
-    box-sizing: border-box;
-    box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 0px 12px 12px;
-    padding: 24px;
+  position: fixed;
+  top: 72px;
+  right: 24px;
+  width: 321px;
+  height: 368px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 12px 12px;
+  padding: 24px;
+  z-index: 98;
+}
+
+.main_popupcard {
+  position: fixed;
+  top: 72px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(238, 230, 230, 0.2);
+  z-index: 97;
 }
 
 .profile_img {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    left: 102px;
-    background: #D90429;
-    border-radius: 100px;
-    color: #FFFFFF;
-    display: grid;
-    place-items: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  left: 102px;
+  background: #d90429;
+  border-radius: 100px;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
 }
 
 .fullname {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 19px;
-    /* identical to box height, or 79% */
-    margin-top: 24px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.15px;
-    color: #333333;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 19px;
+  /* identical to box height, or 79% */
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.15px;
+  color: #333333;
 }
 
 .email {
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height, or 119% */
-    letter-spacing: 0.15px;
-    text-decoration-line: underline;
-    color: #D90429;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height, or 119% */
+  letter-spacing: 0.15px;
+  text-decoration-line: underline;
+  color: #d90429;
 }
 
 .linepopup {
-    width: 273px;
-    height: 0px;
-    border: 1px solid #E0E0E0;
-    margin-top: 16px;
+  width: 273px;
+  height: 0px;
+  border: 1px solid #e0e0e0;
+  margin-top: 16px;
 }
 
 .option {
-    width: 68px;
-    height: 22px;
-    font-family: Helvetica;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 160%;
-    color: #1A1A1A;
-    cursor: pointer;
+  width: 68px;
+  height: 22px;
+  font-family: Helvetica;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 160%;
+  color: #1a1a1a;
+  cursor: pointer;
 }
 
 .linepopup2 {
-    width: 273px;
-    height: 0px;
-    border: 1px solid #E0E0E0;
-    margin-top: 16px;
-    margin-bottom: 16px;
+  width: 273px;
+  height: 0px;
+  border: 1px solid #e0e0e0;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 778px) {
+  .container {
+    position: fixed;
+    width: 100%;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+    background: #d90429;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  }
+  .popupcard {
+    top: 64px;
+    left: 0px;
+  }
+  .main_popupcard {
+    top: 64px;
+  }
+
+  .menu {
+    display: block;
+    cursor: pointer;
+  }
+  .Logo_div {
+    margin-left: 0px;
+  }
+
+  .logo_name,
+  .logo {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    /* identical to box height */
+    color: #ffffff;
+  }
+
+  .nav_control {
+    display: none;
+  }
+
+  .logout_btn {
+    display: block;
+  }
+
+  .nav {
+    padding: 15px;
+  }
 }
